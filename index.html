@@ -1,32 +1,687 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Álvaro & Ghisell</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        img {
-            max-width: 900px;
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Boda de Ghisell y Álvaro — 17 de octubre de 2026. ¡Nos casamos! Toda la información sobre nuestra boda." />
+  <meta name="theme-color" content="#0072cd" />
+  <meta property="og:title" content="Boda de Ghisell y Álvaro" />
+  <meta property="og:description" content="¡Nos casamos! 17 de octubre de 2026 en Valladolid. Confirma tu asistencia." />
+  <meta property="og:type" content="website" />
+
+  <title>Ghisell &amp; Álvaro — Nuestra Boda</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="res/css/styles.css" />
+  <link rel="stylesheet" href="res/css/animations.css" />
 </head>
 <body>
 
-    <img src="https://raw.githubusercontent.com/alvaroyghisell/alvaroyghisell.github.io/refs/heads/main/assets/images/image.png">
+  <!-- ============================================
+       SECTION 1 — HERO / CAROUSEL
+       ============================================ -->
+  <section class="hero" id="hero" aria-label="Portada">
 
-    <h1>Estamos preparando algo especial :)</h1>
+    <!-- Carousel background -->
+    <div class="carousel" id="carousel" aria-hidden="true"></div>
 
+    <!-- Gradient overlay -->
+    <div class="hero__overlay"></div>
+
+    <!-- Title content -->
+    <div class="hero__content">
+      <p class="hero__pre-title">Nuestra boda</p>
+      <h1 class="hero__title">
+        Ghisell
+        <span class="hero__ampersand">&amp;</span>
+        Álvaro
+      </h1>
+      <p class="hero__date">17 · octubre · 2026</p>
+    </div>
+
+    <!-- Carousel dots -->
+    <div class="carousel__dots" id="carousel-dots" aria-label="Navegación del carrusel"></div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll" id="hero-scroll">
+      <span>Descubre más</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 2 — INTRODUCCIÓN
+       ============================================ -->
+  <section class="intro" id="intro" aria-label="Introducción">
+
+    <!-- Hydrangea corner — top right -->
+    <svg class="hydrangea-corner hydrangea-corner--top-right" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <!-- Stems -->
+        <path d="M280 300 C 240 240, 200 200, 160 170 C 130 150, 110 140, 80 135" stroke="#7cc4ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M160 170 C 150 150, 140 120, 150 90" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M160 170 C 180 155, 200 130, 195 100" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Cluster 1 -->
+        <circle cx="72" cy="128" r="9" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="79" cy="132" r="9" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="60" cy="137" r="10" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="64" cy="135" r="7" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="85" cy="120" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="88" cy="120" r="8" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="73" cy="125" r="8" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="75" cy="134" r="11" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="65" cy="115" r="8" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="69" cy="126" r="10" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="55" cy="121" r="8" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="78" cy="104" r="10" fill="#7cc4ff" opacity="0.95"/>
+        <circle cx="78" cy="108" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="70" cy="103" r="9" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="90" cy="109" r="7" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="71" cy="119" r="9" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="92" cy="130" r="8" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="92" cy="131" r="7" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="100" cy="124" r="9" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="83" cy="132" r="7" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="58" cy="130" r="7" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="67" cy="118" r="5" fill="#b9dfff" opacity="0.8"/>
+        <circle cx="54" cy="127" r="9" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="65" cy="137" r="6" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="75" cy="140" r="8" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="77" cy="139" r="8" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="83" cy="141" r="7" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="78" cy="135" r="6" fill="#7cc4ff" opacity="0.85"/>
+        <!-- Cluster 2 -->
+        <circle cx="148" cy="82" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="148" cy="89" r="7" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="151" cy="71" r="7" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="159" cy="84" r="10" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="155" cy="74" r="9" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="163" cy="79" r="11" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="164" cy="64" r="9" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="160" cy="61" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="140" cy="72" r="7" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="134" cy="73" r="6" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="148" cy="61" r="8" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="144" cy="59" r="5" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="160" cy="86" r="8" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="162" cy="77" r="8" fill="#b9dfff" opacity="0.8"/>
+        <circle cx="157" cy="96" r="6" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="145" cy="77" r="7" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="145" cy="95" r="7" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="139" cy="89" r="8" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="155" cy="87" r="7" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="133" cy="86" r="5" fill="#a8d4f5" opacity="0.85"/>
+        <!-- Cluster 3 -->
+        <circle cx="190" cy="92" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="197" cy="92" r="8" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="186" cy="96" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="194" cy="82" r="7" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="200" cy="84" r="8" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="195" cy="92" r="8" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="195" cy="93" r="9" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="190" cy="85" r="10" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="183" cy="82" r="7" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="179" cy="89" r="5" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="185" cy="70" r="5" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="175" cy="89" r="5" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="197" cy="76" r="8" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="187" cy="81" r="9" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="187" cy="79" r="8" fill="#b9dfff" opacity="0.8"/>
+        <circle cx="204" cy="82" r="9" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="205" cy="95" r="7" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="205" cy="106" r="5" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="215" cy="98" r="9" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="201" cy="93" r="9" fill="#b9dfff" opacity="0.85"/>
+        <!-- Leaves -->
+        <path d="M100 145 C 90 130, 70 125, 55 130 C 70 135, 85 140, 100 145Z" fill="#7cc4ff" opacity="0.5"/>
+        <path d="M170 165 C 185 150, 195 135, 190 120 C 180 135, 170 150, 170 165Z" fill="#7cc4ff" opacity="0.45"/>
+        <path d="M130 160 C 120 145, 100 140, 85 145 C 100 150, 115 155, 130 160Z" fill="#a8d4f5" opacity="0.45"/>
+      </g>
+    </svg>
+
+    <!-- Hydrangea corner — bottom left -->
+    <svg class="hydrangea-corner hydrangea-corner--bottom-left" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M20 0 C 60 60, 100 100, 140 130 C 170 150, 190 160, 220 165" stroke="#7cc4ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M140 130 C 150 150, 160 180, 150 210" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="228" cy="172" r="9" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="237" cy="167" r="10" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="235" cy="175" r="8" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="234" cy="160" r="8" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="215" cy="180" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="226" cy="169" r="11" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="212" cy="180" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="214" cy="182" r="12" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="235" cy="185" r="8" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="226" cy="197" r="8" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="226" cy="174" r="6" fill="#7cc4ff" opacity="0.95"/>
+        <circle cx="223" cy="173" r="7" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="222" cy="192" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="213" cy="199" r="8" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="215" cy="189" r="7" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="236" cy="185" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="208" cy="170" r="8" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="213" cy="170" r="10" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="201" cy="159" r="8" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="201" cy="179" r="6" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="240" cy="170" r="7" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="234" cy="158" r="5" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="252" cy="169" r="7" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="228" cy="157" r="6" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="148" cy="218" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="153" cy="219" r="6" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="151" cy="217" r="8" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="153" cy="203" r="7" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="155" cy="226" r="9" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="146" cy="230" r="9" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="145" cy="225" r="11" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="148" cy="238" r="8" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="140" cy="228" r="7" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="150" cy="238" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="149" cy="236" r="6" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="152" cy="215" r="6" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="160" cy="214" r="8" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="172" cy="212" r="7" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="168" cy="205" r="7" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="146" cy="215" r="6" fill="#7cc4ff" opacity="0.8"/>
+        <path d="M200 155 C 210 170, 230 175, 245 170 C 230 165, 215 160, 200 155Z" fill="#7cc4ff" opacity="0.5"/>
+        <path d="M130 135 C 115 150, 105 165, 110 180 C 120 165, 130 150, 130 135Z" fill="#7cc4ff" opacity="0.45"/>
+      </g>
+    </svg>
+
+    <div class="floating-petals"></div>
+
+    <div class="section-wrapper">
+      <div class="intro__icon reveal">
+        <!-- Heart SVG -->
+        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M25 44 C 20 39, 4 28, 4 17 C 4 10, 10 4, 17 4 C 21 4, 24 6, 25 9 C 26 6, 29 4, 33 4 C 40 4, 46 10, 46 17 C 46 28, 30 39, 25 44Z" fill="#a8d4f5" opacity="0.5"/>
+          <path d="M25 42 C 20 37, 6 27, 6 17 C 6 11, 11 6, 17 6 C 21 6, 24 8, 25 11 C 26 8, 29 6, 33 6 C 39 6, 44 11, 44 17 C 44 27, 30 37, 25 42Z" stroke="#7cc4ff" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+
+      <h2 class="intro__heading reveal reveal-delay-1">¡Nos casamos!</h2>
+      <p class="intro__text reveal reveal-delay-2">
+        Y queremos compartir este día tan especial contigo.
+        Después de un camino recorrido juntos, hemos decidido dar el paso más importante de nuestras vidas.
+        Nos encantaría que nos acompañases en esta celebración llena de amor y alegría.
+      </p>
+      <div class="intro__line reveal reveal-delay-3"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 3 — FECHA, HORA & UBICACIÓN
+       ============================================ -->
+  <section class="details" id="details" aria-label="Detalles de la boda">
+
+    <!-- Hydrangea line — left -->
+    <svg class="hydrangea-line-left" viewBox="0 0 200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M180 500 C 160 440, 130 380, 100 330 C 80 290, 60 260, 50 220 C 40 180, 50 140, 70 100 C 80 70, 100 40, 120 10" stroke="#7cc4ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M100 330 C 80 310, 50 300, 30 310" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M50 220 C 30 210, 10 220, 5 240" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M70 100 C 50 90, 30 95, 20 115" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Clusters -->
+        <circle cx="25" cy="305" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="34" cy="297" r="7" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="30" cy="316" r="10" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="25" cy="320" r="6" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="18" cy="298" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="26" cy="296" r="6" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="23" cy="288" r="7" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="3" cy="303" r="9" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="30" cy="295" r="6" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="30" cy="297" r="7" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="42" cy="307" r="5" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="43" cy="303" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="15" cy="312" r="6" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="19" cy="314" r="5" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="10" cy="311" r="4" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="18" cy="326" r="5" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="5" cy="240" r="7" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="-3" cy="241" r="9" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="-1" cy="241" r="9" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="-6" cy="242" r="5" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="10" cy="248" r="8" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="14" cy="237" r="10" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="10" cy="240" r="8" fill="#b9dfff" opacity="0.8"/>
+        <circle cx="7" cy="245" r="9" fill="#b9dfff" opacity="0.8"/>
+        <circle cx="0" cy="232" r="6" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="-1" cy="234" r="5" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="-2" cy="229" r="8" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="4" cy="232" r="7" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="18" cy="110" r="7" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="16" cy="102" r="5" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="6" cy="118" r="5" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="19" cy="102" r="5" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="12" cy="118" r="8" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="24" cy="113" r="6" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="11" cy="106" r="9" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="1" cy="121" r="9" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="25" cy="120" r="6" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="29" cy="115" r="4" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="15" cy="117" r="4" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="36" cy="129" r="4" fill="#7cc4ff" opacity="0.85"/>
+        <!-- Leaves -->
+        <path d="M90 340 C 75 325, 55 320, 40 325 C 55 330, 70 338, 90 340Z" fill="#7cc4ff" opacity="0.45"/>
+        <path d="M45 225 C 30 215, 15 215, 8 225 C 20 225, 32 225, 45 225Z" fill="#a8d4f5" opacity="0.4"/>
+        <path d="M65 105 C 50 95, 35 95, 25 100 C 38 105, 50 108, 65 105Z" fill="#7cc4ff" opacity="0.4"/>
+      </g>
+    </svg>
+
+    <!-- Hydrangea line — right -->
+    <svg class="hydrangea-line-right" viewBox="0 0 200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M180 500 C 160 440, 130 380, 100 330 C 80 290, 60 260, 50 220 C 40 180, 50 140, 70 100 C 80 70, 100 40, 120 10" stroke="#7cc4ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M100 330 C 80 310, 50 300, 30 310" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M50 220 C 30 210, 10 220, 5 240" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M70 100 C 50 90, 30 95, 20 115" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="25" cy="305" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="23" cy="314" r="10" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="36" cy="317" r="8" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="35" cy="307" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="18" cy="298" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="7" cy="289" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="20" cy="292" r="8" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="29" cy="307" r="5" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="30" cy="295" r="6" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="42" cy="297" r="5" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="22" cy="290" r="4" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="41" cy="309" r="8" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="15" cy="312" r="6" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="12" cy="320" r="6" fill="#b9dfff" opacity="0.8"/>
+        <circle cx="20" cy="301" r="5" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="18" cy="309" r="4" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="5" cy="240" r="7" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="-5" cy="244" r="6" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="7" cy="248" r="5" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="2" cy="243" r="8" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="10" cy="248" r="8" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="18" cy="258" r="8" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="10" cy="238" r="6" fill="#b9dfff" opacity="0.8"/>
+        <circle cx="19" cy="243" r="10" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="0" cy="232" r="6" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="8" cy="242" r="4" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="7" cy="227" r="4" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="-1" cy="232" r="7" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="18" cy="110" r="7" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="12" cy="121" r="6" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="9" cy="109" r="5" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="22" cy="102" r="8" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="12" cy="118" r="8" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="5" cy="123" r="10" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="21" cy="113" r="9" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="25" cy="106" r="7" fill="#b9dfff" opacity="0.8"/>
+        <circle cx="25" cy="120" r="6" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="36" cy="126" r="5" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="33" cy="128" r="6" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="39" cy="116" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <path d="M90 340 C 75 325, 55 320, 40 325 C 55 330, 70 338, 90 340Z" fill="#7cc4ff" opacity="0.45"/>
+        <path d="M45 225 C 30 215, 15 215, 8 225 C 20 225, 32 225, 45 225Z" fill="#a8d4f5" opacity="0.4"/>
+        <path d="M65 105 C 50 95, 35 95, 25 100 C 38 105, 50 108, 65 105Z" fill="#7cc4ff" opacity="0.4"/>
+      </g>
+    </svg>
+
+    <div class="section-wrapper">
+      <p class="details__label reveal">Cuándo y dónde</p>
+      <h2 class="details__heading reveal reveal-delay-1">La Celebración</h2>
+      <p class="details__subheading reveal reveal-delay-2">Os esperamos con mucha ilusión</p>
+
+      <div class="details__info">
+        <div class="details__card reveal">
+          <div class="details__card-icon">
+            <!-- Calendar icon -->
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="8" width="28" height="24" rx="3" stroke="#7cc4ff" stroke-width="1.8" fill="none"/>
+              <line x1="4" y1="15" x2="32" y2="15" stroke="#a8d4f5" stroke-width="1.5"/>
+              <line x1="11" y1="4" x2="11" y2="11" stroke="#7cc4ff" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="25" y1="4" x2="25" y2="11" stroke="#7cc4ff" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="12" cy="22" r="1.5" fill="#a8d4f5"/>
+              <circle cx="18" cy="22" r="1.5" fill="#7cc4ff"/>
+              <circle cx="24" cy="22" r="1.5" fill="#a8d4f5"/>
+              <circle cx="12" cy="28" r="1.5" fill="#d1e9f7"/>
+              <circle cx="18" cy="28" r="1.5" fill="#a8d4f5"/>
+            </svg>
+          </div>
+          <h3 class="details__card-title">Fecha y hora</h3>
+          <p class="details__card-text">Sábado, 17 de octubre de 2026</p>
+          <p class="details__card-text">13:00 horas</p>
+        </div>
+
+        <div class="details__card reveal reveal-delay-1">
+          <div class="details__card-icon">
+            <!-- Church icon -->
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 4 L18 10" stroke="#7cc4ff" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M15 7 L21 7" stroke="#7cc4ff" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M10 18 L18 10 L26 18" stroke="#7cc4ff" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+              <rect x="10" y="18" width="16" height="14" stroke="#a8d4f5" stroke-width="1.5" fill="none" rx="1"/>
+              <path d="M15 32 L15 25 Q18 22 21 25 L21 32" stroke="#7cc4ff" stroke-width="1.5" fill="none"/>
+              <circle cx="18" cy="20" r="1.2" fill="#a8d4f5"/>
+            </svg>
+          </div>
+          <h3 class="details__card-title">Ceremonia</h3>
+          <p class="details__card-text">Iglesia de Santa María de la Antigua, Valladolid</p>
+        </div>
+
+        <div class="details__card reveal reveal-delay-2">
+          <div class="details__card-icon">
+            <!-- Dining/banquet icon -->
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8 L6 18 Q6 20 8 20 L9 20 L9 30" stroke="#7cc4ff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 8 L12 14 Q12 20 9 20" stroke="#a8d4f5" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="24" cy="20" rx="8" ry="3" stroke="#7cc4ff" stroke-width="1.8" fill="none"/>
+              <path d="M24 23 L24 30" stroke="#7cc4ff" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M20 30 L28 30" stroke="#a8d4f5" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M20 17.5 Q24 14 28 17.5" stroke="#d1e9f7" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="details__card-title">Banquete</h3>
+          <p class="details__card-text">Restaurante &ldquo;El Hueco&rdquo;</p>
+          <p class="details__card-text">Plaza de la Ópera, s/n</p>
+          <span class="details__card-note">(Habrá disponibilidad de autobús)</span>
+        </div>
+      </div>
+
+      <!-- Google Maps embed -->
+      <div class="details__map-container reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1479.5!2d-4.7275!3d41.6523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4712765f2d27c3%3A0x8e5a0f71c7b5a8e0!2sIglesia%20de%20Santa%20Mar%C3%ADa%20de%20La%20Antigua!5e0!3m2!1ses!2ses!4v1690000000000!5m2!1ses!2ses"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de la Iglesia de Santa María de la Antigua, Valladolid"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION 4 — CUENTA ATRÁS
+       ============================================ -->
+  <section class="countdown-section" id="countdown" aria-label="Cuenta atrás">
+
+    <!-- Hydrangea corner — top left -->
+    <svg class="hydrangea-corner hydrangea-corner--top-left" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M20 300 C 60 240, 100 200, 140 170 C 170 150, 190 140, 220 135" stroke="#7cc4ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M140 170 C 150 150, 160 120, 150 90" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M140 170 C 120 155, 100 130, 105 100" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="228" cy="128" r="9" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="227" cy="128" r="8" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="230" cy="135" r="9" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="224" cy="119" r="7" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="215" cy="120" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="206" cy="109" r="8" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="225" cy="116" r="8" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="217" cy="109" r="9" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="235" cy="115" r="8" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="239" cy="107" r="10" fill="#7cc4ff" opacity="0.95"/>
+        <circle cx="223" cy="123" r="10" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="239" cy="116" r="8" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="222" cy="108" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="222" cy="99" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="229" cy="118" r="8" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="211" cy="118" r="11" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="208" cy="130" r="8" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="209" cy="140" r="9" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="207" cy="125" r="10" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="199" cy="142" r="8" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="242" cy="130" r="7" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="240" cy="133" r="7" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="231" cy="128" r="5" fill="#b9dfff" opacity="0.8"/>
+        <circle cx="248" cy="141" r="9" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="148" cy="82" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="139" cy="94" r="9" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="145" cy="86" r="9" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="147" cy="83" r="7" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="155" cy="74" r="9" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="163" cy="74" r="11" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="153" cy="68" r="9" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="140" cy="69" r="7" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="140" cy="72" r="7" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="140" cy="69" r="5" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="133" cy="67" r="8" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="126" cy="69" r="6" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="160" cy="86" r="8" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="172" cy="96" r="10" fill="#a8d4f5" opacity="0.8"/>
+        <circle cx="149" cy="89" r="9" fill="#7cc4ff" opacity="0.8"/>
+        <circle cx="151" cy="86" r="9" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="103" cy="92" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="92" cy="80" r="10" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="99" cy="98" r="6" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="111" cy="81" r="7" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="96" cy="84" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="105" cy="73" r="6" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="99" cy="78" r="9" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="95" cy="76" r="6" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="110" cy="82" r="7" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="114" cy="70" r="8" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="106" cy="94" r="5" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="124" cy="82" r="6" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="98" cy="104" r="6" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="89" cy="104" r="4" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="91" cy="113" r="8" fill="#d1e9f7" opacity="0.8"/>
+        <circle cx="97" cy="89" r="7" fill="#b9dfff" opacity="0.8"/>
+        <path d="M200 145 C 210 130, 230 125, 245 130 C 230 135, 215 140, 200 145Z" fill="#7cc4ff" opacity="0.5"/>
+        <path d="M130 160 C 115 150, 105 135, 110 120 C 120 135, 130 150, 130 160Z" fill="#7cc4ff" opacity="0.45"/>
+      </g>
+    </svg>
+
+    <!-- Hydrangea corner — bottom right -->
+    <svg class="hydrangea-corner hydrangea-corner--bottom-right" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M280 0 C 240 60, 200 100, 160 130 C 130 150, 110 160, 80 165" stroke="#7cc4ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M160 130 C 150 150, 140 180, 150 210" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="72" cy="172" r="9" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="75" cy="183" r="11" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="62" cy="181" r="7" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="72" cy="177" r="7" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="85" cy="180" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="84" cy="174" r="9" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="90" cy="187" r="10" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="92" cy="178" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="65" cy="178" r="8" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="62" cy="167" r="6" fill="#d1e9f7" opacity="0.95"/>
+        <circle cx="61" cy="168" r="6" fill="#d1e9f7" opacity="0.95"/>
+        <circle cx="80" cy="178" r="9" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="78" cy="188" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="88" cy="194" r="8" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="82" cy="197" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="77" cy="195" r="7" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="92" cy="168" r="7" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="87" cy="169" r="8" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="100" cy="167" r="6" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="85" cy="183" r="9" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="148" cy="218" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="150" cy="214" r="9" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="156" cy="223" r="10" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="145" cy="212" r="10" fill="#b9dfff" opacity="0.85"/>
+        <circle cx="155" cy="210" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="149" cy="213" r="6" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="163" cy="209" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="141" cy="199" r="5" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="142" cy="208" r="6" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="152" cy="208" r="6" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="146" cy="197" r="8" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="135" cy="217" r="4" fill="#7cc4ff" opacity="0.9"/>
+        <path d="M100 155 C 90 170, 70 175, 55 170 C 70 165, 85 160, 100 155Z" fill="#7cc4ff" opacity="0.5"/>
+      </g>
+    </svg>
+
+    <div class="floating-petals"></div>
+
+    <div class="section-wrapper">
+      <p class="countdown-section__label reveal">Cuenta atrás</p>
+      <h2 class="countdown-section__heading reveal reveal-delay-1">Faltan…</h2>
+
+      <div class="countdown reveal reveal-delay-2" role="timer" aria-label="Cuenta atrás para la boda">
+        <div class="countdown__item">
+          <span class="countdown__number" id="countdown-days">--</span>
+          <span class="countdown__label">Días</span>
+        </div>
+        <span class="countdown__separator">:</span>
+        <div class="countdown__item">
+          <span class="countdown__number" id="countdown-hours">--</span>
+          <span class="countdown__label">Horas</span>
+        </div>
+        <span class="countdown__separator">:</span>
+        <div class="countdown__item">
+          <span class="countdown__number" id="countdown-mins">--</span>
+          <span class="countdown__label">Minutos</span>
+        </div>
+        <span class="countdown__separator">:</span>
+        <div class="countdown__item">
+          <span class="countdown__number" id="countdown-secs">--</span>
+          <span class="countdown__label">Segundos</span>
+        </div>
+      </div>
+
+      <p class="countdown__message reveal reveal-delay-3" id="countdown-message">
+        para el día más especial de nuestras vidas
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION — BIRTHDAY SURPRISE
+       ============================================ -->
+  <section class="birthday" id="birthday" aria-label="Cumpleaños de Ghisell">
+
+    <div class="floating-petals"></div>
+
+    <div class="section-wrapper">
+      <p class="birthday__label reveal">¡Y además…!</p>
+      <h2 class="birthday__heading reveal reveal-delay-1">¡Es el cumpleaños de Ghisell!</h2>
+      <p class="birthday__text reveal reveal-delay-2">
+        Como si el amor no fuera motivo suficiente de celebración,
+        el 17 de octubre también es el cumpleaños de nuestra novia.
+        Así que después del banquete… ¡la fiesta continúa!
+      </p>
+
+      <div class="birthday__line reveal reveal-delay-3"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION — CONFIRMAR ASISTENCIA (RSVP)
+       ============================================ -->
+  <section class="rsvp" id="rsvp" aria-label="Confirmar asistencia">
+
+    <!-- Hydrangea corner — top right -->
+    <svg class="hydrangea-corner hydrangea-corner--top-right" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M280 300 C 240 240, 200 200, 160 170 C 130 150, 110 140, 80 135" stroke="#7cc4ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M160 170 C 150 150, 140 120, 150 90" stroke="#7cc4ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="72" cy="128" r="9" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="79" cy="117" r="8" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="62" cy="140" r="8" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="74" cy="131" r="7" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="85" cy="120" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="89" cy="112" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="87" cy="120" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="82" cy="123" r="12" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="65" cy="115" r="8" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="65" cy="127" r="7" fill="#a8d4f5" opacity="0.95"/>
+        <circle cx="61" cy="109" r="9" fill="#7cc4ff" opacity="0.95"/>
+        <circle cx="50" cy="112" r="6" fill="#d1e9f7" opacity="0.95"/>
+        <circle cx="78" cy="108" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="74" cy="111" r="11" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="76" cy="114" r="11" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="78" cy="123" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="92" cy="130" r="8" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="81" cy="136" r="9" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="82" cy="121" r="6" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="101" cy="145" r="9" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="148" cy="82" r="8" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="152" cy="88" r="9" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="143" cy="83" r="9" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="151" cy="75" r="8" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="155" cy="74" r="9" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="143" cy="68" r="8" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="164" cy="75" r="8" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="160" cy="80" r="7" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="140" cy="72" r="7" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="152" cy="67" r="8" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="138" cy="81" r="5" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="153" cy="77" r="8" fill="#7cc4ff" opacity="0.9"/>
+        <path d="M100 145 C 90 130, 70 125, 55 130 C 70 135, 85 140, 100 145Z" fill="#7cc4ff" opacity="0.5"/>
+      </g>
+    </svg>
+
+    <!-- Hydrangea corner — bottom left -->
+    <svg class="hydrangea-corner hydrangea-corner--bottom-left" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M20 0 C 60 60, 100 100, 140 130 C 170 150, 190 160, 220 165" stroke="#7cc4ff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="228" cy="172" r="9" fill="#a8d4f5" opacity="0.9"/>
+        <circle cx="239" cy="173" r="9" fill="#d1e9f7" opacity="0.9"/>
+        <circle cx="239" cy="168" r="9" fill="#7cc4ff" opacity="0.9"/>
+        <circle cx="228" cy="162" r="11" fill="#b9dfff" opacity="0.9"/>
+        <circle cx="215" cy="180" r="10" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="224" cy="183" r="12" fill="#7cc4ff" opacity="0.85"/>
+        <circle cx="218" cy="184" r="9" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="229" cy="175" r="11" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="235" cy="185" r="8" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="229" cy="190" r="8" fill="#d1e9f7" opacity="0.95"/>
+        <circle cx="231" cy="183" r="10" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="244" cy="190" r="10" fill="#b9dfff" opacity="0.95"/>
+        <circle cx="222" cy="192" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="214" cy="197" r="9" fill="#a8d4f5" opacity="0.85"/>
+        <circle cx="212" cy="186" r="9" fill="#d1e9f7" opacity="0.85"/>
+        <circle cx="232" cy="177" r="11" fill="#b9dfff" opacity="0.85"/>
+        <path d="M200 155 C 210 170, 230 175, 245 170 C 230 165, 215 160, 200 155Z" fill="#7cc4ff" opacity="0.5"/>
+      </g>
+    </svg>
+
+    <div class="floating-petals"></div>
+
+    <div class="section-wrapper">
+      <p class="rsvp__label reveal">Confirmación</p>
+      <h2 class="rsvp__heading reveal reveal-delay-1">¿Nos acompañas?</h2>
+      <p class="rsvp__text reveal reveal-delay-2">
+        Tu presencia es el mejor regalo que podemos recibir.
+        Por favor, confirma tu asistencia antes del <strong>1 de septiembre de 2026</strong>.
+      </p>
+
+      <!-- TODO: Reemplazar # con la URL del Google Form -->
+      <a
+        href="#"
+        class="rsvp__button reveal reveal-delay-3"
+        id="rsvp-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Confirmar asistencia (se abre formulario de Google)"
+      >
+        <span>Confirmar asistencia</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" id="footer">
+    <div class="footer__initials">G &amp; Á</div>
+    <p class="footer__text">17 de octubre de 2026</p>
+    <div class="footer__hearts">♥ ♥ ♥</div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="res/js/carousel.js"></script>
+  <script src="res/js/countdown.js"></script>
+  <script src="res/js/main.js"></script>
 </body>
 </html>
